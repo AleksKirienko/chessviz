@@ -19,7 +19,10 @@ build/board_print_plain.o: src/board_print_plain.c src/board_print_plain.h
 
 build/board_print.o: src/board_print.c src/board_print.h
 	$(CXX) $(CFLAGS) src/board_print.c -o build/board_print.o
-
+build:
+	mkdir build
+bin:
+	mkdir bin 
 clean:
 	rm build/*.o
 	rm bin/*
