@@ -3,7 +3,7 @@ CFLAGS =  -c -Wall -Werror -std=c99
 .PHONY: all clean
 OBJECTS = build/main.o build/board.o build/board_print_plain.o build/board_print.o 
 
-all: bin/prog
+all: bin build bin/prog
 
 bin/prog: $(OBJECTS)
 	$(CXX) $(OBJECTS) -o bin/prog
