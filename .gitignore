@@ -1,3 +1,2 @@
-chess
-prog
-.gitignore\235
+build/*.o 
+bin/*
