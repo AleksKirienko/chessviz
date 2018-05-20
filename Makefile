@@ -1,12 +1,21 @@
 CXX=gcc
 CFLAGS =  -c -Wall -Werror -std=c99
-.PHONY: all clean
-OBJECTS = build/main.o build/board.o build/board_print_plain.o build/board_print.o 
+FLAGS  =  -Wall -Werror -std=c99
+OBJECTS = build/main.o build/board.o build/board_print_plain.o build/board_print.o
 
-all: bin build bin/prog
+OB = build/main_test.o build/board.o build/board_print_plain.o build/board_print.o
+
+.PHONY: clean all bin build default test
+
+all: bin build default test
+
+default: bin/prog
+
+test: bin/prog_test
+	bin/prog_test
 
 bin/prog: $(OBJECTS)
-	$(CXX) $(OBJECTS) -o bin/prog
+	$(CXX) $(CFLAGS) $(OBJECTS) -o bin/prog
 
 build/main.o: src/main.c
 	$(CXX) $(CFLAGS) src/main.c -o build/main.o 
@@ -19,10 +28,17 @@ build/board_print_plain.o: src/board_print_plain.c src/board_print_plain.h
 
 build/board_print.o: src/board_print.c src/board_print.h
 	$(CXX) $(CFLAGS) src/board_print.c -o build/board_print.o
+
+bin/prog_test: $(OB) 
+	$(CXX) $(FLAGS) $(OB) -o bin/prog_test
+
+build/main_test.o: test/main.c thirdparty/ctest.h  
+	$(CXX) $(CFLAGS) -I thirdparty -I scr -c test/main.c -o build/main_test.o
+
 build:
 	mkdir build
 bin:
 	mkdir bin 
 clean:
-	rm build/*.o
-	rm bin/*
+	rm -rf build bin
+
