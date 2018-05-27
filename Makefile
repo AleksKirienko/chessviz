@@ -1,5 +1,5 @@
 CXX=gcc
-CFLAGS =  -c -Wall -Werror -std=c99
+CFLAGS = -Wall -Werror -std=c99 -c
 FLAGS  =  -Wall -Werror -std=c99
 OBJECTS = build/main.o build/board.o build/board_print_plain.o build/board_print.o build/input.o 
 
