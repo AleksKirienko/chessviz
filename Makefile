@@ -36,7 +36,7 @@ bin/prog_test: $(OB)
 	$(CXX) $(FLAGS) $(OB) -o bin/prog_test
 
 
-build/main_test.o: test/main.c thirdparty/ctest.h  
+build/main_test.o: test/main.c thirdparty/ctest.h src/board.h src/input.h 
 	$(CXX) $(CFLAGS) -I thirdparty -I src -c test/main.c -o build/main_test.o
 
 build:
