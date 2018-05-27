@@ -1,7 +1,8 @@
-#include "board_print_plain.h"
 #include <stdio.h>
+#include "board.h"
+#include "board_print.h"
+#include "board_print_plain.h"
 #include "input.h"
-
 void printDeck(char deck[8][8]) 
 {
 	for (int n = 1; n < 9; ++n)

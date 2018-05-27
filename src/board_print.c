@@ -1,4 +1,7 @@
+#include "board.h"
 #include "board_print.h"
+#include "board_print_plain.h"
+#include "input.h"
 
 void board_print(char deck[8][8])
 {
