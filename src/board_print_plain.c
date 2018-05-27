@@ -1,5 +1,6 @@
 #include "board_print_plain.h"
 #include <stdio.h>
+#include "input.h"
 
 void printDeck(char deck[8][8]) 
 {
