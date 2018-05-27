@@ -60,7 +60,11 @@ void check(char deck[8][8], int test)
 	char move[5];
 	int moveint[4];
 	int chiselko = 0, tmp1, tmp2;
-	if (test == 0) input(move, moveint);
+	if (test == 0) 
+	{
+		scanf("%s", move);
+		input(move, moveint);
+	}
 	if ((deck[moveint[3]][moveint[2]] == ' ') && (!input_check(move)))
 	{
 		if ((deck[moveint[1]][moveint[0]] == 'p') && (!pawn(deck,moveint)))
